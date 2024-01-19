@@ -99,8 +99,8 @@
       </SplitPane>
       <SplitPane dividerPositions="0.5" layoutX="534.0" layoutY="892.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" scaleX="3.0" scaleY="3.0">
          <items>
-            <Label text="Bonus" />
-            <Label text="0" />
+            <Label fx:id="bonus" text="Bonus" />
+            <Label fx:id="bonus_value" text="0" />
          </items>
       </SplitPane>
    </children>

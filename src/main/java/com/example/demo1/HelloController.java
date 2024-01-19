@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class HelloController {
     @FXML
-        private Label cube_1_v, cube_2_v, cube_3_v, cube_4_v, cube_5_v, ace_value, FScore, twos_value, threes_value, fours_value, fives_value, sixes_value;
+        private Label cube_1_v, cube_2_v, cube_3_v, cube_4_v, cube_5_v, ace_value, FScore, twos_value, threes_value, fours_value, fives_value, sixes_value, bonus_value;
     @FXML
         private ToggleButton cube1, cube2, cube3, cube4, cube5;
     @FXML
@@ -42,7 +42,8 @@ public class HelloController {
 
     int rollv = 0;
 
-
+    boolean bonus_test = false;
+    int bonus = 0;
     public void hold1(){
         if (cube1.isSelected()) {
 
@@ -164,7 +165,7 @@ public class HelloController {
     }
 
     public void rollvalue() {
-        if (rollv <= 2){
+        if (rollv <= 20){
 
             if (!h1) {
             r1 = random.nextInt(6) + 1;
@@ -207,8 +208,15 @@ public class HelloController {
         r1 = random.nextInt(6)+1;
         cube_5_v.setText(String.valueOf(r1));
         score1 = score1 + ace_v;
+        bonus = score1;
         FScore.setText(String.valueOf(score1));
         rollv = 0;
+        if (bonus >= 63 && !bonus_test){
+            bonus_value.setText(String.valueOf(63));
+            bonus_test = true;
+            score1 += 63;
+            FScore.setText(String.valueOf(score1));
+        }
     }
 
     public void twos_hit(){
@@ -227,6 +235,13 @@ public class HelloController {
         score1 = score1 + twos_v;
         FScore.setText(String.valueOf(score1));
         rollv = 0;
+        bonus = score1;
+        if (bonus >= 63 && !bonus_test){
+            bonus_value.setText(String.valueOf(63));
+            bonus_test = true;
+            score1 += 63;
+            FScore.setText(String.valueOf(score1));
+        }
     }
 
     public void threes_hit(){
@@ -245,6 +260,13 @@ public class HelloController {
         score1 = score1 + three_v;
         FScore.setText(String.valueOf(score1));
         rollv = 0;
+        bonus = score1;
+        if (bonus >= 63 && !bonus_test){
+            bonus_value.setText(String.valueOf(63));
+            bonus_test = true;
+            score1 += 63;
+            FScore.setText(String.valueOf(score1));
+        }
     }
 
     public void fours_hit(){
@@ -263,6 +285,13 @@ public class HelloController {
         score1 = score1 + fours_v;
         FScore.setText(String.valueOf(score1));
         rollv = 0;
+        bonus = score1;
+        if (bonus >= 63 && !bonus_test){
+            bonus_value.setText(String.valueOf(63));
+            bonus_test = true;
+            score1 += 63;
+            FScore.setText(String.valueOf(score1));
+        }
     }
 
     public void fives_hit(){
@@ -281,6 +310,14 @@ public class HelloController {
         score1 = score1 + fives_v;
         FScore.setText(String.valueOf(score1));
         rollv = 0;
+        bonus = score1;
+
+        if (bonus >= 63 && !bonus_test){
+            bonus_value.setText(String.valueOf(63));
+            bonus_test = true;
+            score1 += 63;
+            FScore.setText(String.valueOf(score1));
+        }
     }
 
     public void sixes_hit(){
@@ -299,7 +336,16 @@ public class HelloController {
         score1 = score1 + sixes_v;
         FScore.setText(String.valueOf(score1));
         rollv = 0;
+        bonus = score1;
+
+        if (bonus >= 63 && !bonus_test){
+            bonus_value.setText(String.valueOf(63));
+            bonus_test = true;
+            score1 += 63;
+            FScore.setText(String.valueOf(score1));
+        }
     }
+
 
     public void three_of_a_kind(){
 
