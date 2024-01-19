@@ -6,21 +6,23 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 
+import java.util.Arrays;
 import java.util.Random;
 
 
 public class HelloController {
     @FXML
-        private Label cube_1_v, cube_2_v, cube_3_v, cube_4_v, cube_5_v, ace_value, FScore, twos_value, threes_value, fours_value, fives_value, sixes_value, bonus_value;
+        private Label cube_1_v, cube_2_v, cube_3_v, cube_4_v, cube_5_v, ace_value, FScore, twos_value, threes_value, fours_value, fives_value, sixes_value, bonus_value, three_of_a_kind_value, SScore;
     @FXML
         private ToggleButton cube1, cube2, cube3, cube4, cube5;
     @FXML
-        private Button roll,ace, twos, three, four, five, sixes;
+        private Button roll,ace, twos, three, four, five, sixes, three_of_a_kind;
 
     int [] qc = new int[5];
     int same;
 
-    int score1;
+    int score1, score2;
+    int tree_of_a_kind_v;
     Random random = new Random();
     int r1=0;
     int r2 = 0;
@@ -347,7 +349,33 @@ public class HelloController {
     }
 
 
-    public void three_of_a_kind(){
+    public void three_of_a_kind_hit(){
+        Arrays.sort(qc);
+        for (int i = 0; i<qc.length-1; i++) {
+            if (qc[i] - qc[i+1] == 0) {
+                same++;
+                System.out.println(same);
+                tree_of_a_kind_v = qc[i];
+            }
+        }
+        if (same == 3){
+            System.out.println("Works");
+            three_of_a_kind_value.setText(String.valueOf(tree_of_a_kind_v * 3));
+            three_of_a_kind.setDisable(true);
+            r1 = random.nextInt(6)+1;
+            cube_1_v.setText(String.valueOf(r1));
+            r2 = random.nextInt(6)+1;
+            cube_2_v.setText(String.valueOf(r2));
+            r3 = random.nextInt(6)+1;
+            cube_3_v.setText(String.valueOf(r3));
+            r4 = random.nextInt(6)+1;
+            cube_4_v.setText(String.valueOf(r4));
+            r5 = random.nextInt(6)+1;
+            cube_5_v.setText(String.valueOf(r5));
+            score2 = score2 + tree_of_a_kind_v;
+            SScore.setText(String.valueOf(score2));
+            rollv = 0;
+        }
 
     }
 
