@@ -1,6 +1,6 @@
 package com.example.demo1;
 
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -43,12 +43,12 @@ public class HelloController {
     int rollv = 0;
 
 
-    public void hold1(ActionEvent e){
+    public void hold1(){
         if (cube1.isSelected()) {
 
             h1 = true;
             qc[0] = r1;
-            System.out.println(r1);
+
             switch (qc[0]){
                 case 1: ace_v++;
                 case 2: twos_v = twos_v +2;
@@ -56,7 +56,7 @@ public class HelloController {
                 case 4: fours_v = fours_v +4;
                 case 5: fives_v = fives_v +5;
                 case 6: sixes_v += 6;
-            System.out.println("hold1 " +sixes_v);
+
             }
         }
         else {
@@ -65,7 +65,7 @@ public class HelloController {
         }
     }
 
-    public void hold2(ActionEvent e){
+    public void hold2(){
         if (cube2.isSelected()) {
             h2 = true;
             qc[1] = r2;
@@ -77,7 +77,7 @@ public class HelloController {
                 case 5: fives_v = fives_v +5;
                 case 6: sixes_v += 6;
             }
-            System.out.println("hold2 " +sixes_v);
+
 
         }
         else {
@@ -87,7 +87,7 @@ public class HelloController {
         }
     }
 
-    public void hold3(ActionEvent e){
+    public void hold3(){
         if (cube3.isSelected()) {
             h3 = true;
             qc[2] = r3;
@@ -99,7 +99,7 @@ public class HelloController {
                 case 5: fives_v = fives_v +5;
                 case 6: sixes_v += 6;
             }
-            System.out.println("hold3 " +sixes_v);
+
 
         }
         else {
@@ -110,7 +110,7 @@ public class HelloController {
     }
 
 
-    public void hold4(ActionEvent e){
+    public void hold4(){
         if (cube4.isSelected()) {
             h4 = true;
             qc[3] = r4;
@@ -128,7 +128,6 @@ public class HelloController {
                     case 6:
                         sixes_v += 6;
                 }
-                System.out.println("hold4 " + sixes_v);
 
         }
         else {
@@ -137,7 +136,7 @@ public class HelloController {
 
         }
     }
-    public void hold5(ActionEvent e){
+    public void hold5(){
         if (cube5.isSelected()) {
             h5 = true;
             qc[4] = r5;
@@ -155,7 +154,6 @@ public class HelloController {
                     case 6:
                         sixes_v += 6;
                 }
-                System.out.println("hold5 " + sixes_v);
 
         }
         else {
@@ -165,26 +163,26 @@ public class HelloController {
         }
     }
 
-    public void rollvalue(ActionEvent e) {
+    public void rollvalue() {
         if (rollv <= 2){
 
-            if (h1 == false) {
+            if (!h1) {
             r1 = random.nextInt(6) + 1;
             cube_1_v.setText(String.valueOf(r1));
             }
-            if (h2 == false) {
+            if (!h2) {
                 r2 = random.nextInt(6) + 1;
                 cube_2_v.setText(String.valueOf(r2));
             }
-            if (h3 == false) {
+            if (!h3) {
                 r3 = random.nextInt(6) + 1;
                 cube_3_v.setText(String.valueOf(r3));
             }
-            if (h4 == false) {
+            if (!h4) {
                 r4 = random.nextInt(6) + 1;
                 cube_4_v.setText(String.valueOf(r4));
             }
-            if (h5 == false) {
+            if (!h5) {
                 r5 = random.nextInt(6) + 1;
                 cube_5_v.setText(String.valueOf(r5));
             }
@@ -195,7 +193,7 @@ public class HelloController {
         }
     }
 
-    public void ace_hit(ActionEvent e){
+    public void ace_hit(){
         ace_value.setText(String.valueOf(ace_v));
         ace.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -213,7 +211,7 @@ public class HelloController {
         rollv = 0;
     }
 
-    public void twos_hit(ActionEvent e){
+    public void twos_hit(){
         twos_value.setText(String.valueOf(twos_v));
         twos.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -231,7 +229,7 @@ public class HelloController {
         rollv = 0;
     }
 
-    public void threes_hit(ActionEvent e){
+    public void threes_hit(){
         threes_value.setText(String.valueOf(three_v));
         three.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -249,7 +247,7 @@ public class HelloController {
         rollv = 0;
     }
 
-    public void fours_hit(ActionEvent e){
+    public void fours_hit(){
         fours_value.setText(String.valueOf(fours_v));
         four.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -267,7 +265,7 @@ public class HelloController {
         rollv = 0;
     }
 
-    public void fives_hit(ActionEvent e){
+    public void fives_hit(){
         fives_value.setText(String.valueOf(fives_v));
         five.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -285,7 +283,7 @@ public class HelloController {
         rollv = 0;
     }
 
-    public void sixes_hit(ActionEvent e){
+    public void sixes_hit(){
         sixes_value.setText(String.valueOf(sixes_v));
         sixes.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -303,7 +301,7 @@ public class HelloController {
         rollv = 0;
     }
 
-    public void three_of_a_kind(ActionEvent e){
+    public void three_of_a_kind(){
 
     }
 
