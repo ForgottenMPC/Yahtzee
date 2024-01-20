@@ -45,7 +45,6 @@ public class HelloController {
     int bonus = 0;
     public void hold1(){
         if (cube1.isSelected()) {
-            System.out.println(r1);
             h1 = true;
             qc[0] = r1;
             lv1 = r1;
@@ -74,7 +73,6 @@ public class HelloController {
 
     public void hold2(){
         if (cube2.isSelected()) {
-            System.out.println(r2);
             h2 = true;
             qc[1] = r2;
             lv2 = r2;
@@ -105,7 +103,6 @@ public class HelloController {
 
     public void hold3(){
         if (cube3.isSelected()) {
-            System.out.println(r3);
             h3 = true;
             qc[2] = r3;
             lv3 = r3;
@@ -136,7 +133,6 @@ public class HelloController {
 
     public void hold4(){
         if (cube4.isSelected()) {
-            System.out.println(r4);
             h4 = true;
             qc[3] = r4;
             lv4 = r4;
