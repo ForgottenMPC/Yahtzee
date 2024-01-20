@@ -47,11 +47,8 @@ public class HelloController {
         if (cube1.isSelected()) {
             System.out.println(r1);
             h1 = true;
-            System.out.println("1Beginning" + r1);
             qc[0] = r1;
-            System.out.println("Middle" + qc[0]);
             lv1 = r1;
-            System.out.println("last" + lv1);
             switch (qc[0]){
                 case 1: ace_v++; break;
                 case 2: twos_v = twos_v + 2; break;
@@ -79,11 +76,8 @@ public class HelloController {
         if (cube2.isSelected()) {
             System.out.println(r2);
             h2 = true;
-            System.out.println("2Beginning" + r2);
             qc[1] = r2;
-            System.out.println("Middle" + qc[1]);
             lv2 = r2;
-            System.out.println("last" + lv2);
             switch (qc[1]){
                 case 1: ace_v++; break;
                 case 2: twos_v = twos_v + 2; break;
@@ -113,11 +107,8 @@ public class HelloController {
         if (cube3.isSelected()) {
             System.out.println(r3);
             h3 = true;
-            System.out.println("3Beginning" + r3);
             qc[2] = r3;
-            System.out.println("Middle" + qc[2]);
             lv3 = r3;
-            System.out.println("last" + lv3);
             switch (qc[2]){
                 case 1: ace_v++; break;
                 case 2: twos_v = twos_v + 2; break;
@@ -147,11 +138,8 @@ public class HelloController {
         if (cube4.isSelected()) {
             System.out.println(r4);
             h4 = true;
-            System.out.println("4Beginning" + r4);
             qc[3] = r4;
-            System.out.println("Middle" + qc[3]);
             lv4 = r4;
-            System.out.println("last" + lv4);
             switch (qc[3]) {
                 case 1: ace_v++; break;
                 case 2: twos_v = twos_v + 2; break;
@@ -177,12 +165,9 @@ public class HelloController {
     }
     public void hold5(){
         if (cube5.isSelected()) {
-            System.out.println("5Beginning" + r5);
             h5 = true;
             qc[4] = r5;
-            System.out.println("Middle" + qc[4]);
             lv5 = r5;
-            System.out.println("last" + lv5);
             switch (qc[4]) {
                 case 1: ace_v++; break;
                 case 2: twos_v = twos_v + 2; break;
@@ -238,7 +223,6 @@ public class HelloController {
     }
 
     public void ace_hit(){
-        System.out.println("ace" + ace_v);
         ace_value.setText(String.valueOf(ace_v));
         ace.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -271,7 +255,6 @@ public class HelloController {
     }
 
     public void twos_hit(){
-        System.out.println("twos" + twos_v);
         twos_value.setText(String.valueOf(twos_v));
         twos.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -303,7 +286,6 @@ public class HelloController {
     }
 
     public void threes_hit(){
-        System.out.println("threes" + three_v);
         threes_value.setText(String.valueOf(three_v));
         three.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -335,7 +317,6 @@ public class HelloController {
     }
 
     public void fours_hit(){
-        System.out.println("fours" + fours_v);
         fours_value.setText(String.valueOf(fours_v));
         four.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -367,7 +348,6 @@ public class HelloController {
     }
 
     public void fives_hit(){
-        System.out.println("fives" + fives_v);
         fives_value.setText(String.valueOf(fives_v));
         five.setDisable(true);
         r1 = random.nextInt(6)+1;
@@ -434,6 +414,7 @@ public class HelloController {
 
 
     public void three_of_a_kind_hit(){
+        same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
         int[] lv = {lv1,lv2,lv3,lv4,lv5};
         Arrays.sort(lv);
         for (int i = 0; i<qc.length ; i++)
@@ -461,9 +442,7 @@ public class HelloController {
         } else if (same6 == 3){
             same = 6;
         }
-        System.out.println();
         if ((same1 == 3)||(same2 == 3)||(same3 == 3)||(same4 == 3)|| (same5 == 3) || (same6 == 3)){
-            System.out.println("Works");
             three_of_a_kind_value.setText(String.valueOf(same * 3));
             three_of_a_kind.setDisable(true);
             r1 = random.nextInt(6)+1;
@@ -476,27 +455,50 @@ public class HelloController {
             cube_4_v.setText(String.valueOf(r4));
             r5 = random.nextInt(6)+1;
             cube_5_v.setText(String.valueOf(r5));
-            score2 = score2 + tree_of_a_kind_v;
+            score2 = score2 + same * 3;
             SScore.setText(String.valueOf(score2));
             rollv = 0;
-            for (int i = 0; i < qc.length; i++) {
-                System.out.println("Element at index " + i + ": " + qc[i]);
-            }
+            h1 = h2 = h3 = h4 = h5 = false;
+            cube1.setSelected(false);
+            cube2.setSelected(false);
+            cube3.setSelected(false);
+            cube4.setSelected(false);
+            cube5.setSelected(false);
+            ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
         }
-
     }
 
     public void four_of_a_kind_hit(){
-        /* Arrays.sort(qc);
-        same = 0;
-        for (int i = 0; i < qc.length; i++) {
-            System.out.println("Element at index " + i + ": " + qc[i]);
+        same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
+        int[] lv = {lv1,lv2,lv3,lv4,lv5};
+        Arrays.sort(lv);
+        for (int i = 0; i<qc.length ; i++)
+        {
+            switch (qc[i]){
+                case 1: same1++;
+                case 2: same2++;
+                case 3: same3++;
+                case 4: same4++;
+                case 5: same5++;
+                case 6: same6++;
+            }
         }
-        System.out.println();
-
-        if (same == 4){
-            System.out.println("Works");
-            four_of_a_kind_value.setText(String.valueOf(four_of_a_kind_v * 4));
+        if (same1 == 4){
+            same = 1;
+        } else if (same2 == 4) {
+            same = 2;
+        } else if (same3 == 4){
+            same = 3;
+        } else if (same4 == 4) {
+            same = 4;
+        } else if (same5 == 4) {
+            same = 5;
+        } else if (same6 == 4){
+            same = 6;
+        }
+        System.out.println(same);
+        if ((same1 == 4)||(same2 == 4)||(same3 == 4)||(same4 == 4)|| (same5 == 4) || (same6 == 4)){
+            four_of_a_kind_value.setText(String.valueOf(same * 4));
             four_of_a_kind.setDisable(true);
             r1 = random.nextInt(6)+1;
             cube_1_v.setText(String.valueOf(r1));
@@ -508,12 +510,17 @@ public class HelloController {
             cube_4_v.setText(String.valueOf(r4));
             r5 = random.nextInt(6)+1;
             cube_5_v.setText(String.valueOf(r5));
-            score2 = score2 + four_of_a_kind_v;
+            score2 = score2 + same * 4;
             SScore.setText(String.valueOf(score2));
             rollv = 0;
+            h1 = h2 = h3 = h4 = h5 = false;
+            cube1.setSelected(false);
+            cube2.setSelected(false);
+            cube3.setSelected(false);
+            cube4.setSelected(false);
+            cube5.setSelected(false);
+            ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
         }
-
-         */
     }
 
 
