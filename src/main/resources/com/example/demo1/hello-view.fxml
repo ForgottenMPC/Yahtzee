@@ -28,8 +28,8 @@
          <items>
             <Button fx:id="three_of_a_kind" mnemonicParsing="false" onAction="#three_of_a_kind_hit" prefHeight="25.0" prefWidth="107.0" text="Three of a kind" />
             <Label fx:id="three_of_a_kind_value" text="0" wrapText="true" />
-            <Button fx:id="four_of_a_kind" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Four of a kind" />
-            <Label text="0" wrapText="true" />
+            <Button fx:id="four_of_a_kind" mnemonicParsing="false" onAction="#four_of_a_kind_hit" prefHeight="25.0" prefWidth="107.0" text="Four of a kind" />
+            <Label fx:id="four_of_a_kind_value" text="0" wrapText="true" />
             <Button fx:id="full_house" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Full house" />
             <Label text="0" wrapText="true" />
             <Button fx:id="small_straight" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Small Straight" />
