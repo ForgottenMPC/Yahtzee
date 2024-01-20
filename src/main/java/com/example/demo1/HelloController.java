@@ -12,17 +12,16 @@ import java.util.Random;
 
 public class HelloController {
     @FXML
-        private Label cube_1_v, cube_2_v, cube_3_v, cube_4_v, cube_5_v, ace_value, FScore, twos_value, threes_value, fours_value, fives_value, sixes_value, bonus_value, three_of_a_kind_value, SScore, four_of_a_kind_value;
+        private Label cube_1_v, cube_2_v, cube_3_v, cube_4_v, cube_5_v, ace_value, FScore, twos_value, threes_value, fours_value, fives_value, sixes_value, bonus_value, three_of_a_kind_value, SScore, four_of_a_kind_value, full_house_value;
     @FXML
         private ToggleButton cube1, cube2, cube3, cube4, cube5;
     @FXML
-        private Button roll,ace, twos, three, four, five, sixes, three_of_a_kind, four_of_a_kind;
+        private Button roll,ace, twos, three, four, five, sixes, three_of_a_kind, four_of_a_kind, full_house;
 
     int [] qc = new int[5];
     int same, same1,same2,same3,same4,same5,same6;
-    int count;
+    boolean fullhouse = false;
     int score1, score2;
-    int tree_of_a_kind_v, four_of_a_kind_v;
     Random random = new Random();
     int r1=0;
     int r2 = 0;
@@ -410,12 +409,11 @@ public class HelloController {
 
 
     public void three_of_a_kind_hit(){
-        same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
         int[] lv = {lv1,lv2,lv3,lv4,lv5};
         Arrays.sort(lv);
-        for (int i = 0; i<qc.length ; i++)
+        for (int i = 0; i<lv.length ; i++)
         {
-            switch (qc[i]){
+            switch (lv[i]){
                 case 1:
                     same1++;
                 case 2: same2++;
@@ -460,18 +458,18 @@ public class HelloController {
             cube3.setSelected(false);
             cube4.setSelected(false);
             cube5.setSelected(false);
-            ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
         }
-    }
+         lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
 
+    }
     public void four_of_a_kind_hit(){
-        same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
         int[] lv = {lv1,lv2,lv3,lv4,lv5};
         Arrays.sort(lv);
-        for (int i = 0; i<qc.length ; i++)
+        for (int i = 0; i<lv.length ; i++)
         {
-            switch (qc[i]){
-                case 1: same1++;
+            switch (lv[i]){
+                case 1:
+                    same1++;
                 case 2: same2++;
                 case 3: same3++;
                 case 4: same4++;
@@ -479,6 +477,7 @@ public class HelloController {
                 case 6: same6++;
             }
         }
+
         if (same1 == 4){
             same = 1;
         } else if (same2 == 4) {
@@ -492,7 +491,7 @@ public class HelloController {
         } else if (same6 == 4){
             same = 6;
         }
-        System.out.println(same);
+
         if ((same1 == 4)||(same2 == 4)||(same3 == 4)||(same4 == 4)|| (same5 == 4) || (same6 == 4)){
             four_of_a_kind_value.setText(String.valueOf(same * 4));
             four_of_a_kind.setDisable(true);
@@ -515,10 +514,63 @@ public class HelloController {
             cube3.setSelected(false);
             cube4.setSelected(false);
             cube5.setSelected(false);
-            ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
         }
+        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
+
     }
 
+    public void full_house_hit(){
+        int[] lv = {lv1,lv2,lv3,lv4,lv5};
+        Arrays.sort(lv);
+
+        for (int i = 0; i<lv.length ; i++)
+        {
+            switch (lv[i]){
+                case 1:
+                    same1++;
+                case 2: same2++;
+                case 3: same3++;
+                case 4: same4++;
+                case 5: same5++;
+                case 6: same6++;
+            }
+        }
+
+        for (int i = 0; i<lv.length-1; i++) {
+            if ((lv[i] == lv[i+1]) && (lv[i] != same)) {
+                fullhouse = true;
+            } else {
+                fullhouse = false;
+            }
+        }
+
+        if (fullhouse){
+            full_house_value.setText(String.valueOf(25));
+            full_house.setDisable(true);
+            r1 = random.nextInt(6)+1;
+            cube_1_v.setText(String.valueOf(r1));
+            r2 = random.nextInt(6)+1;
+            cube_2_v.setText(String.valueOf(r2));
+            r3 = random.nextInt(6)+1;
+            cube_3_v.setText(String.valueOf(r3));
+            r4 = random.nextInt(6)+1;
+            cube_4_v.setText(String.valueOf(r4));
+            r5 = random.nextInt(6)+1;
+            cube_5_v.setText(String.valueOf(r5));
+            score2 = score2 +25;
+            SScore.setText(String.valueOf(score2));
+            rollv = 0;
+            h1 = h2 = h3 = h4 = h5 = false;
+            cube1.setSelected(false);
+            cube2.setSelected(false);
+            cube3.setSelected(false);
+            cube4.setSelected(false);
+            cube5.setSelected(false);
+
+        }
+        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
+
+    }
 
 
 }
