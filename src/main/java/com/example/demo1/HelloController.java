@@ -69,7 +69,6 @@ public class HelloController {
             }
         }
     }
-
     public void hold2(){
         if (cube2.isSelected()) {
             h2 = true;
@@ -99,7 +98,6 @@ public class HelloController {
 
         }
     }
-
     public void hold3(){
         if (cube3.isSelected()) {
             h3 = true;
@@ -129,7 +127,6 @@ public class HelloController {
 
         }
     }
-
     public void hold4(){
         if (cube4.isSelected()) {
             h4 = true;
@@ -248,7 +245,6 @@ public class HelloController {
             FScore.setText(String.valueOf(score1));
         }
     }
-
     public void twos_hit(){
         twos_value.setText(String.valueOf(twos_v));
         twos.setDisable(true);
@@ -279,7 +275,6 @@ public class HelloController {
             FScore.setText(String.valueOf(score1));
         }
     }
-
     public void threes_hit(){
         threes_value.setText(String.valueOf(three_v));
         three.setDisable(true);
@@ -310,7 +305,6 @@ public class HelloController {
             FScore.setText(String.valueOf(score1));
         }
     }
-
     public void fours_hit(){
         fours_value.setText(String.valueOf(fours_v));
         four.setDisable(true);
@@ -341,7 +335,6 @@ public class HelloController {
             FScore.setText(String.valueOf(score1));
         }
     }
-
     public void fives_hit(){
         fives_value.setText(String.valueOf(fives_v));
         five.setDisable(true);
@@ -373,7 +366,6 @@ public class HelloController {
             FScore.setText(String.valueOf(score1));
         }
     }
-
     public void sixes_hit(){
         sixes_value.setText(String.valueOf(sixes_v));
         sixes.setDisable(true);
@@ -405,8 +397,6 @@ public class HelloController {
             FScore.setText(String.valueOf(score1));
         }
     }
-
-
 
     public void three_of_a_kind_hit(){
         int[] lv = {lv1,lv2,lv3,lv4,lv5};
@@ -523,28 +513,19 @@ public class HelloController {
         int[] lv = {lv1,lv2,lv3,lv4,lv5};
         Arrays.sort(lv);
 
-        for (int i = 0; i<lv.length ; i++)
-        {
-            switch (lv[i]){
-                case 1:
-                    same1++;
-                case 2: same2++;
-                case 3: same3++;
-                case 4: same4++;
-                case 5: same5++;
-                case 6: same6++;
+        for (int i = 0; i<lv.length-1; i++) {
+            if ((lv[i] == lv[i+1])) {
+                same++;
             }
         }
 
         for (int i = 0; i<lv.length-1; i++) {
             if ((lv[i] == lv[i+1]) && (lv[i] != same)) {
                 fullhouse = true;
-            } else {
-                fullhouse = false;
             }
         }
 
-        if (fullhouse){
+        if (fullhouse&& (h1 && h2 && h3 && h4 && h5)){
             full_house_value.setText(String.valueOf(25));
             full_house.setDisable(true);
             r1 = random.nextInt(6)+1;
@@ -571,6 +552,7 @@ public class HelloController {
         lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
 
     }
+
 
 
 }
