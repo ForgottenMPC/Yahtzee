@@ -24,6 +24,7 @@ public class HelloController {
     int fh_c;
     boolean yahtzee_hit = false;
     int score1, score2;
+
     Random random = new Random();
 
     int yahtzee_bonus_count = 0;
@@ -183,7 +184,8 @@ public class HelloController {
     }
 
     public void rollvalue() {
-        if (rollv <= 200){
+        if (!yahtzee_hit) yahzee_bonus.setDisable(true);
+        if (rollv <= 2){
 
             if (!h1) {
             r1 = random.nextInt(6) + 1;
@@ -734,6 +736,7 @@ public class HelloController {
         if (h4) lv4 = r4;
         if (h5) lv5 = r5;
         yahtzee_hit = true;
+        yahzee_bonus.setDisable(false);
 
         int[] lv = {lv1,lv2,lv3,lv4,lv5};
 
