@@ -236,10 +236,12 @@ public class HelloController {
         cube5.setSelected(false);
         bonus = score1;
         if (bonus >= 63 && !bonus_test){
-            bonus_value.setText(String.valueOf(63));
+            bonus_value.setText(String.valueOf(35));
             bonus_test = true;
-            score1 += 63;
+            score1 += 35;
             FScore.setText(String.valueOf(score1));
+            lv1 = lv2 = lv3 = lv4 = lv5 = fh_c = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
+
         }
     }
     public void twos_hit(){
@@ -266,10 +268,12 @@ public class HelloController {
         cube5.setSelected(false);
         bonus = score1;
         if (bonus >= 63 && !bonus_test){
-            bonus_value.setText(String.valueOf(63));
+            bonus_value.setText(String.valueOf(35));
             bonus_test = true;
-            score1 += 63;
+            score1 += 35;
             FScore.setText(String.valueOf(score1));
+            lv1 = lv2 = lv3 = lv4 = lv5 = same = fh_c =same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
+
         }
     }
     public void threes_hit(){
@@ -296,10 +300,12 @@ public class HelloController {
         cube5.setSelected(false);
         bonus = score1;
         if (bonus >= 63 && !bonus_test){
-            bonus_value.setText(String.valueOf(63));
+            bonus_value.setText(String.valueOf(35));
             bonus_test = true;
-            score1 += 63;
+            score1 += 35;
             FScore.setText(String.valueOf(score1));
+            lv1 = lv2 = lv3 = lv4 =fh_c= lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
+
         }
     }
     public void fours_hit(){
@@ -326,10 +332,11 @@ public class HelloController {
         cube5.setSelected(false);
         bonus = score1;
         if (bonus >= 63 && !bonus_test){
-            bonus_value.setText(String.valueOf(63));
+            bonus_value.setText(String.valueOf(35));
             bonus_test = true;
-            score1 += 63;
+            score1 += 35;
             FScore.setText(String.valueOf(score1));
+            lv1 = lv2 = lv3 = lv4 = lv5 = fh_c = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
         }
     }
     public void fives_hit(){
@@ -357,10 +364,12 @@ public class HelloController {
         bonus = score1;
 
         if (bonus >= 63 && !bonus_test){
-            bonus_value.setText(String.valueOf(63));
+            bonus_value.setText(String.valueOf(35));
             bonus_test = true;
-            score1 += 63;
+            score1 += 35;
             FScore.setText(String.valueOf(score1));
+            lv1 = lv2 = lv3 = lv4 = lv5 = same =fh_c= same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
+
         }
     }
     public void sixes_hit(){
@@ -388,10 +397,11 @@ public class HelloController {
         bonus = score1;
 
         if (bonus >= 63 && !bonus_test){
-            bonus_value.setText(String.valueOf(63));
+            bonus_value.setText(String.valueOf(35));
             bonus_test = true;
-            score1 += 63;
+            score1 += 35;
             FScore.setText(String.valueOf(score1));
+            lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = fh_c = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
         }
     }
 
@@ -461,7 +471,7 @@ public class HelloController {
             cube4.setSelected(false);
             cube5.setSelected(false);
         }
-         lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
+        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
 
     }
     public void four_of_a_kind_hit(){
@@ -531,7 +541,7 @@ public class HelloController {
             cube4.setSelected(false);
             cube5.setSelected(false);
         }
-        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
+        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
 
     }
     public void full_house_hit(){
@@ -610,7 +620,7 @@ public class HelloController {
         cube5.setSelected(false);
 
         }
-        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
+        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
 
     }
 
@@ -632,28 +642,16 @@ public class HelloController {
         }
         int[] lv = {lv1,lv2,lv3,lv4,lv5};
         Arrays.sort(lv);
-
-        for(int i=0; i<lv.length-1; i++) {
-            if (lv[i] - lv[i+1] == -1){
-                seq++;
-            }
-        }
-        System.out.println(seq);
+        if ((lv1 - lv2 == -1 && (lv2 != 0) && (lv1 != 0) )||(lv1-lv3 == -1  && (lv3 != 0) && (lv1 != 0)) || (lv1-lv4 == -1 && (lv4 != 0) && (lv1 != 0)) || (lv1-lv5 == -1) && (lv5 != 0) && (lv1 != 0)) seq++;
+        if ((lv2 - lv1 == -1 && (lv2 != 0) && (lv1 != 0))||(lv2-lv3 == -1 && (lv3 != 0) && (lv2 != 0)) || (lv2-lv4 == -1 && (lv2 != 0) && (lv4 != 0)) || (lv2-lv5 == -1) && (lv2 != 0) && (lv5 != 0)) seq++;
+        if ((lv3 - lv2 == -1 && (lv3 != 0) && (lv2 != 0))||(lv3-lv1 == -1 && (lv3 != 0) && (lv1 != 0)) || (lv3-lv4 == -1 && (lv3 != 0) && (lv4 != 0)) || (lv3-lv5 == -1) && (lv3 != 0) && (lv5 != 0)) seq++;
+        if ((lv4 - lv2 == -1 && (lv2 != 0) && (lv4 != 0))||(lv4-lv3 == -1 && (lv3 != 0) && (lv4 != 0)) || (lv4-lv1 == -1 && (lv1 != 0) && (lv4 != 0)) || (lv4-lv5 == -1) && (lv5 != 0) && (lv4 != 0)) seq++;
+        if ((lv5 - lv2 == -1  && (lv5 != 0) && (lv2 != 0))||(lv5-lv3 == -1  && (lv5 != 0) && (lv3 != 0)) || (lv5-lv4 == -1  && (lv5 != 0) && (lv4 != 0)) || (lv5-lv1 == -1  && (lv5 != 0) && (lv1 != 0))) seq++;
 
 
-        if (seq == 4) {
-            System.out.println("You got a Small straight + 30 points!");
-            //value2 += 30;
-        } else if (seq == 5) {
-            System.out.println("You got a large straight + 40 points!");
-           // value2 += 40;
-        }
-
-
-
-        if (fullhouse&& (h1 && h2 && h3 && h4 && h5)){
-            full_house_value.setText(String.valueOf(25));
-            full_house.setDisable(true);
+        if (seq == 3) {
+            small_straight_value.setText(String.valueOf(30));
+            small_straight.setDisable(true);
             r1 = random.nextInt(6)+1;
             cube_1_v.setText(String.valueOf(r1));
             r2 = random.nextInt(6)+1;
@@ -664,7 +662,7 @@ public class HelloController {
             cube_4_v.setText(String.valueOf(r4));
             r5 = random.nextInt(6)+1;
             cube_5_v.setText(String.valueOf(r5));
-            score2 = score2 +25;
+            score2 = score2 +30;
             SScore.setText(String.valueOf(score2));
             rollv = 0;
             h1 = h2 = h3 = h4 = h5 = false;
@@ -673,14 +671,62 @@ public class HelloController {
             cube3.setSelected(false);
             cube4.setSelected(false);
             cube5.setSelected(false);
-
         }
-        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
-    } //Needs work
 
+        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = seq = 0;
+    }
     public void large_straight_hit(){
+        if (h1){
+            lv1 = r1;
+        }
+        if (h2){
+            lv2 = r2;
+        }
+        if (h3){
+            lv3 = r3;
+        }
+        if (h4){
+            lv4 = r4;
+        }
+        if (h5){
+            lv5 = r5;
+        }
+        int[] lv = {lv1,lv2,lv3,lv4,lv5};
+        Arrays.sort(lv);
+        if ((lv1 - lv2 == -1 && (lv2 != 0) && (lv1 != 0) )||(lv1-lv3 == -1  && (lv3 != 0) && (lv1 != 0)) || (lv1-lv4 == -1 && (lv4 != 0) && (lv1 != 0)) || (lv1-lv5 == -1) && (lv5 != 0) && (lv1 != 0)) seq++;
+        if ((lv2 - lv1 == -1 && (lv2 != 0) && (lv1 != 0))||(lv2-lv3 == -1 && (lv3 != 0) && (lv2 != 0)) || (lv2-lv4 == -1 && (lv2 != 0) && (lv4 != 0)) || (lv2-lv5 == -1) && (lv2 != 0) && (lv5 != 0)) seq++;
+        if ((lv3 - lv2 == -1 && (lv3 != 0) && (lv2 != 0))||(lv3-lv1 == -1 && (lv3 != 0) && (lv1 != 0)) || (lv3-lv4 == -1 && (lv3 != 0) && (lv4 != 0)) || (lv3-lv5 == -1) && (lv3 != 0) && (lv5 != 0)) seq++;
+        if ((lv4 - lv2 == -1 && (lv2 != 0) && (lv4 != 0))||(lv4-lv3 == -1 && (lv3 != 0) && (lv4 != 0)) || (lv4-lv1 == -1 && (lv1 != 0) && (lv4 != 0)) || (lv4-lv5 == -1) && (lv5 != 0) && (lv4 != 0)) seq++;
+        if ((lv5 - lv2 == -1  && (lv5 != 0) && (lv2 != 0))||(lv5-lv3 == -1  && (lv5 != 0) && (lv3 != 0)) || (lv5-lv4 == -1  && (lv5 != 0) && (lv4 != 0)) || (lv5-lv1 == -1  && (lv5 != 0) && (lv1 != 0))) seq++;
 
-    } //Needs work
+
+        if (seq == 4) {
+            large_straight_value.setText(String.valueOf(40));
+            large_straight.setDisable(true);
+            r1 = random.nextInt(6)+1;
+            cube_1_v.setText(String.valueOf(r1));
+            r2 = random.nextInt(6)+1;
+            cube_2_v.setText(String.valueOf(r2));
+            r3 = random.nextInt(6)+1;
+            cube_3_v.setText(String.valueOf(r3));
+            r4 = random.nextInt(6)+1;
+            cube_4_v.setText(String.valueOf(r4));
+            r5 = random.nextInt(6)+1;
+            cube_5_v.setText(String.valueOf(r5));
+            score2 = score2 +40;
+            SScore.setText(String.valueOf(score2));
+            rollv = 0;
+            h1 = h2 = h3 = h4 = h5 = false;
+            cube1.setSelected(false);
+            cube2.setSelected(false);
+            cube3.setSelected(false);
+            cube4.setSelected(false);
+            cube5.setSelected(false);
+        }
+
+        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = seq = 0;
+    }
+
     public void yahtzee_hit(){
         if (h1) lv1 = r1;
         if (h2) lv2 = r2;
@@ -691,7 +737,7 @@ public class HelloController {
 
         int[] lv = {lv1,lv2,lv3,lv4,lv5};
 
-        if (lv1 == lv2 && lv2 == lv3 && lv3 == lv4 && lv4 == lv5){
+        if ((lv1 == lv2 && lv2 == lv3 && lv3 == lv4 && lv4 == lv5) == (lv1 != 0) && (lv2 != 0) && (lv3 != 0) && (lv4 != 0) && (lv5 != 0)) {
             yahtzee_value.setText(String.valueOf(50));
             yahtzee.setDisable(true);
             r1 = random.nextInt(6)+1;
@@ -759,7 +805,7 @@ lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = sam
 
             int[] lv = {lv1,lv2,lv3,lv4,lv5};
 
-            if (lv1 == lv2 && lv2 == lv3 && lv3 == lv4 && lv4 == lv5){
+            if ((lv1 == lv2 && lv2 == lv3 && lv3 == lv4 && lv4 == lv5) == (lv1 != 0) && (lv2 != 0) && (lv3 != 0) && (lv4 != 0) && (lv5 != 0)){
                 yahtzee_bonus_count += 100;
                 yahtzee_bonus_value.setText(String.valueOf(yahtzee_bonus_count));
                 r1 = random.nextInt(6)+1;
@@ -790,13 +836,4 @@ lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = sam
     public void total_score_hit(){
         total_score_value.setText(String.valueOf(score1+score2));
     }
-
-
-
-
 }
-
-
-
-
-

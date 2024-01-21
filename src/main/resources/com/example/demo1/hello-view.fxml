@@ -6,7 +6,7 @@
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HelloController">
+<AnchorPane fx:id="bonus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HelloController">
    <children>
       <SplitPane dividerPositions="0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5" layoutX="197.0" layoutY="350.0" orientation="VERTICAL" prefWidth="109.0" scaleX="3.0" scaleY="3.0">
          <items>
@@ -99,7 +99,7 @@
       </SplitPane>
       <SplitPane dividerPositions="0.5" layoutX="534.0" layoutY="892.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" scaleX="3.0" scaleY="3.0">
          <items>
-            <Label fx:id="bonus" text="Bonus" />
+            <Label fx:id="bonus" text="Bonus (62+)" />
             <Label fx:id="bonus_value" text="0" />
          </items>
       </SplitPane>
