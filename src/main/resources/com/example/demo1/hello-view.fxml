@@ -34,18 +34,18 @@
             <Label fx:id="full_house_value" text="0" wrapText="true" />
             <Button fx:id="small_straight" mnemonicParsing="false" onAction="#small_straight_hit" prefHeight="25.0" prefWidth="107.0" text="Small Straight" />
             <Label fx:id="small_straight_value" text="0" wrapText="true" />
-            <Button fx:id="large_straight" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Large Straight" />
-            <Label text="0" wrapText="true" />
-            <Button fx:id="yahtzee" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Yahtzee" />
-            <Label text="0" wrapText="true" />
-            <Button fx:id="chance" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Chance" />
-            <Label text="0" wrapText="true" />
+            <Button fx:id="large_straight" mnemonicParsing="false" onAction="#large_straight_hit" prefHeight="25.0" prefWidth="111.0" text="Large Straight" />
+            <Label fx:id="large_straight_value" text="0" wrapText="true" />
+            <Button fx:id="yahtzee" mnemonicParsing="false" onAction="#yahtzee_hit" prefHeight="25.0" prefWidth="111.0" text="Yahtzee" />
+            <Label fx:id="yahtzee_value" text="0" wrapText="true" />
+            <Button fx:id="chance" mnemonicParsing="false" onAction="#chance_hit" prefHeight="25.0" prefWidth="107.0" text="Chance" />
+            <Label fx:id="chance_value" text="0" wrapText="true" />
          </items>
       </SplitPane>
       <SplitPane dividerPositions="0.5" layoutX="1291.0" layoutY="114.0" scaleX="3.0" scaleY="3.0">
          <items>
-            <Label text="0" wrapText="true" />
-            <Button fx:id="yahtzee_bonus" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Yahtzee Bonus" />
+            <Label fx:id="yahtzee_bonus_value" text="0" wrapText="true" />
+            <Button fx:id="yahzee_bonus" mnemonicParsing="false" onAction="#yahtzee_bonus_hit" prefHeight="25.0" prefWidth="107.0" text="Yahtzee Bonus" />
          </items>
       </SplitPane>
       <SplitPane dividerPositions="0.5833333333333334" layoutX="747.0" layoutY="332.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="56.0" scaleX="3.0" scaleY="3.0">
@@ -81,8 +81,8 @@
       <Button fx:id="roll" layoutX="992.0" layoutY="503.0" mnemonicParsing="false" onAction="#rollvalue" scaleX="3.0" scaleY="3.0" text="Roll" />
       <SplitPane dividerPositions="0.5" layoutX="982.0" layoutY="634.0" scaleX="3.0" scaleY="3.0">
          <items>
-            <Label text="Total score" />
-            <Label text="0" />
+            <Button fx:id="total_score" mnemonicParsing="false" onAction="#total_score_hit" text="Total score" />
+            <Label fx:id="total_score_value" text="0" />
          </items>
       </SplitPane>
       <SplitPane dividerPositions="0.5" layoutX="961.0" layoutY="721.0" scaleX="3.0" scaleY="3.0">

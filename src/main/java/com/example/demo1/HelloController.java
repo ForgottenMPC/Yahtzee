@@ -12,19 +12,21 @@ import java.util.Random;
 
 public class HelloController {
     @FXML
-        private Label cube_1_v, cube_2_v, cube_3_v, cube_4_v, cube_5_v, ace_value, FScore, twos_value, threes_value, fours_value, fives_value, sixes_value, bonus_value, three_of_a_kind_value, SScore, four_of_a_kind_value, full_house_value, small_straight_value;
+        private Label cube_1_v, cube_2_v, cube_3_v, cube_4_v, cube_5_v, ace_value, FScore, twos_value, threes_value, fours_value, fives_value, sixes_value, bonus_value, three_of_a_kind_value, SScore, four_of_a_kind_value, full_house_value, small_straight_value, large_straight_value, yahtzee_value, chance_value,total_score_value, yahtzee_bonus_value;
     @FXML
         private ToggleButton cube1, cube2, cube3, cube4, cube5;
     @FXML
-        private Button roll,ace, twos, three, four, five, sixes, three_of_a_kind, four_of_a_kind, full_house, small_straight;
+        private Button roll,ace, twos, three, four, five, sixes, three_of_a_kind, four_of_a_kind, full_house, small_straight, large_straight, yahtzee, chance, yahzee_bonus;
 
     int [] qc = new int[5];
     int same, same1,same2,same3,same4,same5,same6;
     boolean fullhouse = false;
     int fh_c;
+    boolean yahtzee_hit = false;
     int score1, score2;
     Random random = new Random();
 
+    int yahtzee_bonus_count = 0;
     int seq;
     int r1=0;
     int r2 = 0;
@@ -56,7 +58,6 @@ public class HelloController {
                 case 5: fives_v = fives_v+ 5; break;
                 case 6: sixes_v = sixes_v+ 6; break;
             }
-            System.out.println();
         }
         else {
             h1 = false;
@@ -217,24 +218,23 @@ public class HelloController {
         r1 = random.nextInt(6)+1;
         cube_1_v.setText(String.valueOf(r1));
         r2 = random.nextInt(6)+1;
-        cube_2_v.setText(String.valueOf(r1));
+        cube_2_v.setText(String.valueOf(r2));
         r3 = random.nextInt(6)+1;
-        cube_3_v.setText(String.valueOf(r1));
+        cube_3_v.setText(String.valueOf(r3));
         r4 = random.nextInt(6)+1;
-        cube_4_v.setText(String.valueOf(r1));
+        cube_4_v.setText(String.valueOf(r4));
         r5 = random.nextInt(6)+1;
-        cube_5_v.setText(String.valueOf(r1));
+        cube_5_v.setText(String.valueOf(r5));
         score1 = score1 + ace_v;
-        bonus = score1;
+        FScore.setText(String.valueOf(score1));
+        rollv = 0;
         h1 = h2 = h3 = h4 = h5 = false;
         cube1.setSelected(false);
         cube2.setSelected(false);
         cube3.setSelected(false);
         cube4.setSelected(false);
         cube5.setSelected(false);
-        FScore.setText(String.valueOf(score1));
-        rollv = 0;
-
+        bonus = score1;
         if (bonus >= 63 && !bonus_test){
             bonus_value.setText(String.valueOf(63));
             bonus_test = true;
@@ -676,9 +676,127 @@ public class HelloController {
 
         }
         lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = 0;
+    } //Needs work
 
+    public void large_straight_hit(){
+
+    } //Needs work
+    public void yahtzee_hit(){
+        if (h1) lv1 = r1;
+        if (h2) lv2 = r2;
+        if (h3) lv3 = r3;
+        if (h4) lv4 = r4;
+        if (h5) lv5 = r5;
+        yahtzee_hit = true;
+
+        int[] lv = {lv1,lv2,lv3,lv4,lv5};
+
+        if (lv1 == lv2 && lv2 == lv3 && lv3 == lv4 && lv4 == lv5){
+            yahtzee_value.setText(String.valueOf(50));
+            yahtzee.setDisable(true);
+            r1 = random.nextInt(6)+1;
+            cube_1_v.setText(String.valueOf(r1));
+            r2 = random.nextInt(6)+1;
+            cube_2_v.setText(String.valueOf(r2));
+            r3 = random.nextInt(6)+1;
+            cube_3_v.setText(String.valueOf(r3));
+            r4 = random.nextInt(6)+1;
+            cube_4_v.setText(String.valueOf(r4));
+            r5 = random.nextInt(6)+1;
+            cube_5_v.setText(String.valueOf(r5));
+            score2 = score2 +50;
+            SScore.setText(String.valueOf(score2));
+            rollv = 0;
+            h1 = h2 = h3 = h4 = h5 = false;
+            cube1.setSelected(false);
+            cube2.setSelected(false);
+            cube3.setSelected(false);
+            cube4.setSelected(false);
+            cube5.setSelected(false);
+
+        }
+        lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
+    }
+
+    public void chance_hit(){
+    if (h1) lv1 = r1;
+    if (h2) lv2 = r2;
+    if (h3) lv3 = r3;
+    if (h4) lv4 = r4;
+    if (h5) lv5 = r5;
+
+    chance_value.setText(String.valueOf(lv1 + lv2 + lv3 + lv4 + lv5));
+    chance.setDisable(true);
+    r1 = random.nextInt(6)+1;
+    cube_1_v.setText(String.valueOf(r1));
+    r2 = random.nextInt(6)+1;
+    cube_2_v.setText(String.valueOf(r2));
+    r3 = random.nextInt(6)+1;
+    cube_3_v.setText(String.valueOf(r3));
+    r4 = random.nextInt(6)+1;
+    cube_4_v.setText(String.valueOf(r4));
+    r5 = random.nextInt(6)+1;
+    cube_5_v.setText(String.valueOf(r5));
+    score2 = score2 +lv1 + lv2 +lv3 +lv4 + lv5;
+    SScore.setText(String.valueOf(score2));
+    rollv = 0;
+    h1 = h2 = h3 = h4 = h5 = false;
+    cube1.setSelected(false);
+    cube2.setSelected(false);
+    cube3.setSelected(false);
+    cube4.setSelected(false);
+    cube5.setSelected(false);
+lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
+}
+
+    public void yahtzee_bonus_hit(){
+        if (yahtzee_hit){
+            if (h1) lv1 = r1;
+            if (h2) lv2 = r2;
+            if (h3) lv3 = r3;
+            if (h4) lv4 = r4;
+            if (h5) lv5 = r5;
+
+            int[] lv = {lv1,lv2,lv3,lv4,lv5};
+
+            if (lv1 == lv2 && lv2 == lv3 && lv3 == lv4 && lv4 == lv5){
+                yahtzee_bonus_count += 100;
+                yahtzee_bonus_value.setText(String.valueOf(yahtzee_bonus_count));
+                r1 = random.nextInt(6)+1;
+                cube_1_v.setText(String.valueOf(r1));
+                r2 = random.nextInt(6)+1;
+                cube_2_v.setText(String.valueOf(r2));
+                r3 = random.nextInt(6)+1;
+                cube_3_v.setText(String.valueOf(r3));
+                r4 = random.nextInt(6)+1;
+                cube_4_v.setText(String.valueOf(r4));
+                r5 = random.nextInt(6)+1;
+                cube_5_v.setText(String.valueOf(r5));
+                score2 = score2 +100;
+                SScore.setText(String.valueOf(score2));
+                rollv = 0;
+                h1 = h2 = h3 = h4 = h5 = false;
+                cube1.setSelected(false);
+                cube2.setSelected(false);
+                cube3.setSelected(false);
+                cube4.setSelected(false);
+                cube5.setSelected(false);
+
+            }
+            lv1 = lv2 = lv3 = lv4 = lv5 = same = same1 = same2 = same3 = same4 = same5 = same6 = ace_v = twos_v = three_v = fours_v = fives_v = sixes_v = 0;
+        }
+    }
+
+    public void total_score_hit(){
+        total_score_value.setText(String.valueOf(score1+score2));
     }
 
 
+
+
 }
+
+
+
+
 
